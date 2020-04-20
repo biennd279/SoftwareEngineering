@@ -1,0 +1,64 @@
+\documentclass[11pt,a4paper,oneside]{report}
+\usepackage[utf8]{vietnam}
+\usepackage[T5]{fontenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{makeidx}
+\usepackage{graphicx}
+\usepackage[unicode, bookmarksopenlevel=4]{hyperref}
+\usepackage{makeidx}
+\usepackage[style=alphabetic]{biblatex}
+\usepackage[acronym]{glossaries}
+\usepackage{multicol}
+\usepackage{subfiles}
+
+\addbibresource{./reference.bib}
+\makeindex
+\makeglossaries
+\loadglsentries{glossary}
+\graphicspath{ {./images/} {./../images}}
+\DeclareGraphicsExtensions{.png}
+
+\title{Software Engineering}
+
+\begin{document}
+	\maketitle
+	\listoffigures
+	\listoftables
+	\tableofcontents 
+	\setcounter{chapter}{7}
+	\chapter{Design Concept}
+	Thiết kế phần mềm \index{Thiết kế phần mềm} bao gồm tập hợp các nguyên tắc, khái niệm và thủ tục tạo nên sự phát triển của một hệ thống hoặc một  sản phẩm chất lượng. Nguyên tắc thiết kế đã hình thành một nguyên lý quan trọng mà bạn phải thực hiện trong công việc thiết kế. Các khái niệm  phải được hiểu rõ trước khi được áp dụng vào thực tiễn, và chính việc thiết kế cũng sẽ tạo ra các phiên bản khác nhau của phần mềm đóng vai trò là một hướng dẫn cho hoạt động xây dựng tiếp theo.
+	Thiết kế là mấu chốt để kỹ nghệ phần mềm thành công. Vào đầu những năm 1990, Mitch Kapor, người tạo ra Lotus 1-2-3, đã trình bày một “bản tuyên ngôn thiết kế phần mềm” trên tạp chí Dr. Dobbs Journal. Ông nói:
+	
+	\begin{quotation}
+		Thiết kế là gì? Đó là nơi bạn đứng với hai chân ở trong hai thế giới-thế giới của công nghệ và thế giới của con người  cùng với  mục đích của họ-và bạn cố gắng kết hợp hai thế giới đó lại với nhau ....
+		
+		Vitrute, một nhà phê bình kiến trúc La Mã, đưa ra quan niệm rằng các tòa nhà được thiết kế tốt là những tòa nhà toát lên được sự ổn định, tiện nghi và sự thích thú. Đó cũng là quan niệm tương tự để nói về một phần mềm tốt.
+	\end{quotation}	
+	
+	Mục tiêu của thiết kế là tạo ra một mô hình hoặc đại diện thể hiện được sự vững chắc, tiện nghi và sự thích thú. Để thực hiện điều này, bạn phải tiến hành đa dạng hóa và sau đó tập hợp lại. Belady [Bel81] nói rằng “đa dạng hóa  là việc tìm kiếm một danh sách các lựa chọn thay thế, nguyên liệu thiết kế: các thành phần (components), giải pháp thành phần(component soltion) và kiến thức (knowlegde), tất cả có trong các bản tài liệu, sách giáo khoa và tâm trí”. Sau khi tập hợp các thông tin đa dạng này lại, bạn phải lựa chọn ra từ danh sách đó những yếu tố đáp ứng được các yêu cầu được xác định bởi yêu cầu kỹ thuật và mô hình phân tích (Chương 5 đến 7).Sau khi thực hiện xong, bạn phải tập hợp các lựa chọn thay thế được cân nhắc và được loại bỏ  trên “một cấu hình cụ thể của các thành phần, rồi từ đó tạo ra sản phẩm cuối cùng” [Bel81].
+	
+	Đa dạng hóa và tập hợp là sự kết hợp của trực giác và phán đoán dựa trên những kinh nghiệm trong việc xây dựng các thực thể tương tự, một tập hợp các nguyên tắc hoặc phương pháp hướng dẫn cách thức mà mô hình phát triển, một tập hợp các tiêu chí đánh giá chất lượng, và quá trình này lặp đi lặp lại cho đến khi một bản thiết kế được hoàn thành.
+	
+	Thiết kế phần mềm thay đổi liên tục khi xuất hiện các phương pháp mới, có thể phân tích tốt hơn và phát triển sâu hơn.1Ngay cả ngày nay, hầu hết các phương pháp thiết kế phần mềm đều thiếu chiều sâu, tính linh hoạt và tính chất định lượng, những tính chất mà thường liên quan đến các ngành thiết kế kỹ thuật cổ điển. Tuy nhiên, các phương pháp thiết kế phần mềm cũng đã tồn tại, tiêu chí cho chất lượng thiết kế cũng có sẵn và ký hiệu thiết kế có thể được áp dụng. Trong chương này, tôi khai thác các khái niệm và nguyên tắc cơ bản có thể áp dụng cho tất cả các thiết kế phần mềm, các yếu tố của mô hình thiết kế và tác động của các mẫu đối với quy trình thiết kế. Trong các Chương 9 đến 13, tôi sẽ trình bày nhiều phương pháp thiết kế phần mềm khi chúng được áp dụng cho thiết kế kiến trúc (architecture), thành phần (components) và giao diện (interfaces) cũng như các phương pháp thiết kế theo mẫu (pattern-based) và dựa trên nền tảng Web (Web-oriented).
+	
+	\subfile{./section/Section_1.tex}
+	
+	\subfile{./section/Section_2.tex}
+	
+	\subfile{./section/Section_3.tex}
+	
+	\printindex
+	
+	\printglossary[type=\acronymtype, title=Thuật ngữ viết tắt]
+	
+	\printglossary
+	
+	\nocite{*}
+	\printbibliography[title=Tài liệu tham khảo]
+	
+	
+\end{document}
+

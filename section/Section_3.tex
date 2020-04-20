@@ -1,0 +1,40 @@
+\documentclass[./../SoftwareEngineering.tex]{subfiles}
+
+\section{Design Concepts}
+	Tập hợp các concept thiết kế phần mềm cơ bản đều được triển khai khắp chiều dài lịch sử thiết kế phần mềm. Mặc dù mức độ phổ dụng của các phần mềm thao đổi qua từng năm, mỗi trong chúng đều đứng trước thử thách của thời gian. Mỗi người cung cấp thiết kế với nền móng đến từ nhiều phương pháp thiết kế tinh xảo (sophisticated) được áp dụng. Chúng có thể giúp bạn trả lời theo những câu hỏi dưới đây:
+	\begin{itemize}
+		\item 	Các tiêu chuẩn để chia phần mềm thành các component riêng lẻ?
+		\item Làm thế nào để các hàm hoặc cấu trúc dữ liệu được phân chia chi tiết từ sự biểu diễn khái niệm của phần mềm?
+		\item Các tiêu chuẩn xác định chất lượng kỹ thuật của một thiết kế phần mềm?
+	\end{itemize}
+	
+	M. A. Jackson [Jac75] từng nói: “The beginning of wisdom for a [software engineer] is to recognize the difference between getting a program to work, and getting it right.” tạm dịch "Sự khôn ngoan của kỹ sư phần mềm là xác định sự khác biệt của một chương trình hoạt động và chương trình hoạt động đúng." Các concept thiết kế phần mềm cơ bản cung cấp một khung (framework) cần thiết giúp nó hoạt động "getting it right".
+	
+	Ở phần dưới đây, tôi(tác giả) đưa ra cái nhìn cơ bản về concept thế kế phần mềm quan trọng giữa các thiết kế phần mềm thiết kế truyền thống và phần mềm hướng đối tượng.
+	\subsection{Trừu tượng hóa (Abstraction)}
+	Khi bạn cân nhắc một giải pháp modular bất kỳ vấn đề nào, rất nhiều mức trừu tượng được đặt ra. Ở mức cao nhất của trừu tượng, một giải pháp được đưa ra rộng rãi là sử dụng ngôn ngữ vấn đề(using the language of the problem environment). Ở các mức thấp hơn, một miêu tả chi tiết hơn của vấn đề được cung cấp. Thuật ngữ Problem-oriented được ghép cặp với thuật ngữ implementation-oriented trong nỗ lực đưa một giải pháp. Cuối cùng, ở mức thấp nhất, giải pháp được phát biểu thành một phương thức (manner) có thể hiện thực một cách trúc tiếp.
+	
+	Ở mỗi mức trừu tượng được phát triển, bạn phải tạo ra sự trừu tượng hóa cả thủ tục và dữ liệu. Trừu tượng hóa thủ tục (A procedural abstraction) ám chỉ đến một chuỗi chỉ thị có thể chỉ rõ và hàm giới hạn(limited function). Tên của Thủ tục trừu tượng(thủ tục) có thể bao hàm các các hàm đó, nhưng chi tiết được ẩn đi. Một ví dụ của trừu tượng hóa có thể là việc mở cửa (open). Việc mở(open) được ấn đi bởi rất nhiều thủ tục khác(e.g. Đi tới cửa, vươn tới và giữ tay cầm, vặn tay cầm và đẩy cửa, đi qua cửa,vv...)
+	
+	Trừa lượng hóa dữ liệu là tên của tập hợp dữ liệu được mô tả trong đối tượng. Ở ngữ cảnh của thủ tục mở cửa, bạn có thể định một dữ liệu trừu tượng gọi cửa (door). Như bất kỳ đối tượng dữ liệu khác, dữ liệu trừu tượng của door bao gồm một tập các thuộc thành mô tả được dữ liệu(e.g. kiểu của cửa, hướng gió, cách mỏ, khối lượng, kích thước). Nó theo bởi các thủ tục mở cần sử dụng thông tin của thuộc tính của kiểu Door.
+	
+	\subsection{Kiến trúc (Architecture)}
+	Kiến trúc phần mềm ám chỉ tới "toàn thể cấu trúc của phần mềm và cách mà cấu trúc cung cấp sự thích hợp về mặt khái niệm của hệ thống".[Sha95a] Một cách đơn giản, kiến trúc là cấu trúc hoặc tổ chức của các thành phần cấu thành, cách thức các thành phần tương tác với nhau, và cấu trúc của dữ liệu sử dụng trong các thành phần cấu thành. Ở mức rộng, biểu diễn các phần lớn của hệ thống và cách thức tương tác của chúng.
+	
+	Một mục tiêu của thiết kế phần mềm xuất hướng tới(to derive) một bản thiết kế kiến trúc(an architectural rendering) của hệ thống. Bản thiết kiến này như một kết cấu (framework) mà từ đó các thiết kế chi tiết được tiến hành. Tập hợp các mẫu kiến trúc được các kỹ sư phần mềm để giải quyết các vấn đề về thiết kế chung. 
+	Shaw and Gralan [Sha95a] giải thích cả đặc tính nên được định nghĩa như một phần của thiết kế hệ thống:
+	\begin{description}
+		\item [Structural properties.] Đây là một dạng biểu diễn của thiết kế kiến trúc định nghĩa các thành phần của hệ thống(e.g. modules, đối tượng, filter) và cách thức mà các thành phần đó được đóng gói và tương tác với nhau. Ví dụng: đối tượng được đóng gói cả dữ liệu và sự xử lý thông qua điều khiển và tưởng tượng dữ liệu bằng cách triển khai các phương thức.
+		\item [Extra-functional properties.]  Mô tả thiết kế kiến trúc nên giải thích(should address) làm thế nào để kiến trúc có thể giải quyết các vấn đề về hiệu năng, công suất, độ tin cậy, bảo mật, khả năng thích nghi và các khía cạnh khác của hệ thống phần mềm.
+		\item [Families of relate system.] Mô hình thiết kế nên phác thảo (should draw) các mẫu thiết kế lặp lại thường gặp trong thiết kế các họ hệ thống tượng tự (families of similar system). Trong đó, các thiết kế nên có khả năng tải sử dụng các khối kiến trúc.
+	\end{description}
+	
+	Các các đặc tính kỹ thuật đó, các mẫu kiến trúc có thể biểu diễn một hoặc nhiều các mô hình khác nhau [Gar95]. Mô hình hướng cấu trúc (Strúctural models) biểu diễn kiến trúc như một tập tổ chức của các thành phần (component).Mô hình khung kiến trúc (Framework models) tăng các mức trừu tượng bằng cách cố gắng xác định các khung kiến trúc (architectural design framework) lặp lại giữa các ứng dụng tương tự nhau. Mô hình kiến trúc động (Dynamic models) giải quyết các khía cạnh về hành vi của kiến trúc, chúng cho biết cấu trúc hoặc cấu hình của hệ thống có thể thay đổi như một hàm hoặc các sự kiện bên ngoài. Mô hình quy trình (Process models) tập trung các thiết kế của doanh nghiệp hoặc các quy trình kỹ thuật mà hệ thống cần đáp ứng được. Cuối cùng là Mô hình chức năng  (Functional models) có thể sử dụng để biểu diễn sự phần cấp của hệ thống. 
+	
+	Một số lượng các Ngôn ngữ biểu diễn kiến trúc (Architectural description languages) (ADLs) được phát triển để biểu diễn các mô hình đó [Sha95b]. Mặc dù rất nhiều ADLs được đưa ra, nhưng điểm chung được cung cấp được các thành phần hệ thống và cách thức chúng được kết nối với nhau.
+	
+	Nên chú ý rằng có một số tranh cãi xung quanh vị trí của kiến trúc trong thiết kế. Một số nghiên cứu chỉ ra rằng sự phát sinh kiến trúc phần mềm nên tách biệt khỏi thiết kế và chúng nên xảy ra giữa yêu cầu kỹ thuật và các hành động thiết kế thông thường. Một số khác tin rằng các kiến trúc là một phần không thể thiếu của quá trình thiết kế. Điều này sẽ được bàn thêm ở chương 9.
+	\subsection{Pattern}
+	Bard Appleton định nghĩa mẫu thiết kế (a design pattern) theo định nghĩa: "A pattern is a named nugget of insight which conveys the essence of a proven solution to a recurring problem within a certain context amidst competing concerns” [App00]. tạm dịch "Mẫu thiết kế là một giải pháp được đặt tên, chúng đã được chứng minh giải quyết được các vấn đề lặp lại trong các tình huống cụ thể". Hay nói một cách khác, mẫu thiết kế đưa ra nhưng một thiết kế cấu trúc giải quyết các vấn đề cụ thể trong tính huống cụ thể và trong đó ... có thể tác dụng đến cách áp dụng và sử dụng nó. (amid “forces” that may have an impact on the manner in which the pattern is applied and used.)
+	
+	Ý nghĩa của mỗi mẫu thiết kế cung cấp chi tiết các người thiết kế xác định (1) mẫu thiết kế có thể áp dụng được hay không trong một trường làm việc hiện tại, (2) liệu có thể tái sử dụng chứng (từ đó tiết kiệm thời gian), và (3) liệu mẫu thiết kế có thể phục vụ một hướng dẫn trong các việc phát triển tương tự nhưng khác nhau về chức năng hoặc cấu trúc. Chi tiết sẽ được bàn luận thêm ở chương 12.

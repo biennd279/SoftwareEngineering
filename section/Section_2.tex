@@ -1,0 +1,66 @@
+\documentclass[./../SoftwareEngineering.tex]{subfiles}
+
+\begin{document}
+	\section{The Design Process}
+	\subsection{Software Quality Guidelines and Attributes}
+	\subsection{Tiến hóa của thiết kế phần mềm. (The evolution of software design)}
+	Tiến hóa của thiết kế phần mềm là một quá trình tiếp diễn trong khoảng 6 thập kỷ gần đây. Các thiết kế đầu tiên, làm việc tập trung vào các tiêu chuẩn cho phát triển các chương trình rời nhau và các phương pháp cho việc cải tiến cấu trúc phần mềm theo kiểu top-down. Các khía cạnh của lập trình thủ tục được phát triển thành nguyên lý (a philosophy) là Lập trình hướng thủ tục (strúctured programming). Sau đó, đề nghị phương pháp cho việc phát triển (translation) từ luồng dữ liệu (data flow) hoặc cấu trúc dữ liệu tới các bản thiết kế xác định. Một thiết kế tiếp cận mới hơn đề xuất hướng tiếp cận hướng đối tượng cho các mẫu thiết kế phát sinh (design derivation). Gần đây, nổi bật trong thiết kế phần mềm là trong kiến trúc phần mềm [Kru06] và các mẫu thiết kế (design pattern) có thể sử dụng trong việc hiện thực (implement) kiến trúc phần mềm và thiết kế các mức trừu tượng thấp hơn. Nhấn mạnh thêm rằng ở các phương pháp aspect-oriented, model-driven development, và test-driven development nhấn mạnh các kỹ thuật hiệu quả hơn trong việc modular-hóa và cấu trúc hóa các thiết kế trong các thiết kế đã được tạo ra. 
+	
+	Một số phương pháp thiết kế, growing out of the work just noted, được áp dụng trên toàn ngành. Như một số phân tích được nhắc đến ở Chương 6 và 7, mỗi phương pháp thiết kế giới thiệu các heuristic và ký pháp, cũng như cung cấp cái nhìn đơn điệu về đặc trưng của chất lượng. Song, những phương pháp đó có những đặc trưng chung: (1) cơ chế chuyển đổi từ yêu cầu trong mô hình yêu cầu thành bản thiết kế biểu diễn, (2) các ký pháp cho việc biểu diễn functional component và các interface của chúng, (3) heuristic cho việc làm mịn và phân chia, và (4) hướng dẫn cho việc đánh giá chất lượng bản thiết kế.
+	
+	Bất chấp những phương pháp đang được sử dụng, bạn nên áp dụng một số concept cơ bản cho dữ liệu, kiến trúc, interface và mức component. Những concept đó được xét đến theo những phần dưới đây.
+	
+	\begin{minipage}{\textwidth}
+		\begin{enumerate}
+			\item Khảo sát thông tin miền mô hình(domain model), và thiết kế cấu trúc dữ liệu phù hợp cho đối tượng và thuộc tính của chúng. 
+			
+			\item Sử dụng mô hình phân tích, lựa chọn kiểu kiến trúc phù hợp nhất với phần mềm.
+			
+			\item Chia mô hình phân tích thành các bản thiết kế hệ con (subsystem) và phân bố chúng trong kiến trúc: Chắc chắn rằng mỗi hệ thống liên kết với nhau về mặt chức năng.
+			\begin{itemize}
+				\item Thiết kế interface cho hệ con.
+				
+				\item Phân bố các lớp hoặc hàm đã được phân tích cho các hệ con.
+			\end{itemize}
+			
+			\item Tạo ra một tập các thiết kế cho lớp hoặc component: Chuyển các miêu tả của lớp đã phân tích tới các lớp thiết kế.
+			\begin{itemize}
+				\item So sánh từng lớp thiết kế với tiêu chuẩn: cân nhắc các vấn đề liên quan đến  kế thừa.
+				
+				\item Định nghĩa các phương thức và tin nhắn liên kết với mỗi class.
+				
+				\item Đánh giá và sử dụng design pattern cho các thiết kế lớp hoặc hệ con.
+				
+				
+			\end{itemize}
+			
+			\item Thiết kế tất cả các interface cần thiết cho các hệ thống hoặc thiết bị ngoài.
+			
+			\item Thiết kế giao diện người dùng:
+			\begin{itemize}
+				\item Kiểm tra lại các nhiệm vụ phân tích.
+				
+				\item Xác định rõ các hoạt động cơ bản của người dùng trong các kịch bản.
+				
+				\item Tạo interface của mô hình hành vi.
+				
+				\item Xác định các đối tượng interface, quy trình (mechanism) điều khiển.
+				
+				\item Kiểm tra lại các thiết kế interface và quy trình cần thiết.
+			\end{itemize}
+			
+			
+			
+			\item Kiểm soát thiết mức component.
+			\begin{itemize}
+				\item Xác định tất cả các thuật toán liên quan đến các mức trừu tượng mức thấp.
+				
+				\item Xác định lại interface cho mỗi component.
+				
+				\item Kiểm tra mỗi component và hiệu chỉnh lại các lỗi chưa xác định.
+			\end{itemize}
+			
+			\item Triển khai các mô hình phát triển.
+		\end{enumerate}	
+	\end{minipage}
+\end{document}
