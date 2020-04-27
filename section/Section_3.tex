@@ -34,7 +34,9 @@ Shaw and Gralan \cites{Sha95} giải thích cả đặc tính nên được đ�
 
 \begin{description}
 	\item [Structural properties.] Đây là một dạng biểu diễn của thiết kế kiến trúc định nghĩa các thành phần của hệ thống(e.g. modules, đối tượng, filter) và cách thức mà các thành phần đó được đóng gói và tương tác với nhau. Ví dụng: đối tượng được đóng gói cả dữ liệu và sự xử lý thông qua điều khiển và tưởng tượng dữ liệu bằng cách triển khai các phương thức.
+	
 	\item [Extra-functional properties.]  Mô tả thiết kế kiến trúc nên giải thích(should address) làm thế nào để kiến trúc có thể giải quyết các vấn đề về hiệu năng, công suất, độ tin cậy, bảo mật, khả năng thích nghi và các khía cạnh khác của hệ thống phần mềm.
+	
 	\item [Families of relate system.] Mô hình thiết kế nên phác thảo (should draw) các mẫu thiết kế lặp lại thường gặp trong thiết kế các họ hệ thống tượng tự (families of similar system). Trong đó, các thiết kế nên có khả năng tải sử dụng các khối kiến trúc.
 \end{description}
 
@@ -75,11 +77,11 @@ Nó cũng được phát biểu rằng “modularity is the single attribute of 
 \begin{figure}[!htb]
 	\centering
 	\includegraphics[width=\textwidth]{figure_8_2.png}
-	\caption{Đồ thị tương quan giữa số moudle và chi phí}
-	\label{ref: fig8_2}
+	\caption{Đồ thị tương quan giữa số module và chi phí}
+	\label{fig:fig8_2}
 \end{figure}
 
-Như đã thảo luận ở các phần trước, nếu bạn chia các vấn đề đủ nhỏ thì chi phí sẽ không đáng kể, nhưng điều này thực tế là không thể!! Ở hình 8.2 [Reference to Figure 8.2] thì nỗ lực chia nhỏ phần mềm thành các module riêng rẻ sẽ làm số lượng module tăng theo. Với một tập yêu cầu, số lượng module nhiều lên tương đương việc kích thước module riêng lẻ sẽ nhỏ hơn, chi phí phát triển modul sẽ ít đi. Tuy nhiên, khi số lượng module tăng lên, nỗ lực kết hợp chúng thành hệ thống sẽ tăng. Nhưng đặc điểm này sẽ dẫn đến đường cong ở [Hình 8.2]. Như vậy, nếu có M modul thì kết quả sẽ đạt được chi phí tối thiểu, nhưng không đủ chính xác để để xác định giá trị M. Đường cong đưa ra ở [Hình 8.2] hữu ích khi xét đến tính modul của phần mềm. Bạn nên module hóa, nhưng nên ở trong cùng lân cận của M. Nên tránh các vùng undermodularity và overmodularity. Nhưng làm thế nào để xác định được vùng lân cận của M? Số lượng modul nên là bao nhiêu? Những câu hỏi này đòi hỏi khả năng hiểu của các khái niệm khác của chương này.
+Như đã thảo luận ở các phần trước, nếu bạn chia các vấn đề đủ nhỏ thì chi phí sẽ không đáng kể, nhưng điều này thực tế là không thể!! Ở\autoref{fig:fig8_2} thì nỗ lực chia nhỏ phần mềm thành các module riêng rẻ sẽ làm số lượng module tăng theo. Với một tập yêu cầu, số lượng module nhiều lên tương đương việc kích thước module riêng lẻ sẽ nhỏ hơn, chi phí phát triển modul sẽ ít đi. Tuy nhiên, khi số lượng module tăng lên, nỗ lực kết hợp chúng thành hệ thống sẽ tăng. Nhưng đặc điểm này sẽ dẫn đến đường cong ở\autoref{fig:fig8_2}. Như vậy, nếu có M modul thì kết quả sẽ đạt được chi phí tối thiểu, nhưng không đủ chính xác để để xác định giá trị M. Đường cong đưa ra ở\autoref{fig:fig8_2} hữu ích khi xét đến tính modul của phần mềm. Bạn nên module hóa, nhưng nên ở trong cùng lân cận của M. Nên tránh các vùng undermodularity và overmodularity. Nhưng làm thế nào để xác định được vùng lân cận của M? Số lượng modul nên là bao nhiêu? Những câu hỏi này đòi hỏi khả năng hiểu của các khái niệm khác của chương này.
 
 
 Bạn nên module hóa thiết kế(và chương trình đích) sẽ giúp lập trình viên dễ lên kế hoạch, chi phí phần mềm có thể xác định và phân phối, những thay đổi có thể dễ dàng xác định, kiểm thử và tìm lỗi sẽ hiệu quả hơn và lâu dài hơn là hệ thống được bảo trình liên tục mà không có các sự cố nghiêm trọng xảy ra.
@@ -108,7 +110,7 @@ Phần mềm được module hóa hiệu quả (với các module độc lập) 
 \subsection{Refinement}
 \subsection{Aspects}
 \subsection{Refactoring}
-An important design activity suggested for many agile methods (Chapter 3), refactoring is a reorganization technique that simplifies the design (or code) of a component without changing its function or behavior. Fowler [Fow00] defines refactoring in the following manner: “Refactoring is the process of changing a software system in such a way that it does not alter the external behavior of the code [design] yet improves its internal strúcture.”
+An important design activity suggested for many agile methods (Chapter 3), refactoring is a reorganization technique that simplifies the design (or code) of a component without changing its function or behavior. Fowler \cites{Fow00} defines refactoring in the following manner: “Refactoring is the process of changing a software system in such a way that it does not alter the external behavior of the code [design] yet improves its internal strúcture.”
 \subsection{Object-Oriented Design Concepts}
 \subsection{Design Classes}
 

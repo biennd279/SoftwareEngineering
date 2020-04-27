@@ -2,7 +2,14 @@
 
 
 \section{Mô hình thiết kế}
-Mô hình thiết kế có thể được quan sát theo 2 chiều khác nhau như được thể hiện trong hình 8.4.  Chiều quá trình (process dimension) biểu thị sự tiến hóa của mô hình thiết kế trong khi các task được thực hiện như là một phần trong các quá trình của phần mềm. Chiều trừu tượng (abstraction dimension) đại diện cho mức độ chi tiết khi mỗi yếu tố của mô hình phân tích được biến đổi thành một thiết kế tương ứng và cải thiện một cách lặp đi lặp lại. Theo hình 8.4, đường nét đứt biểu thị ranh giới giữa mô hình phân tích và thiết kế. Trong một vài trường hợp, việc phân biệt rõ mô hình phân tích và thiết kế là khả thi. Trong vài trường hợp khác, mô hình phân tích dần trộn lẫn với mô hình thiết kế nên đường phân biệt sẽ ít rõ ràng hơn. 
+Mô hình thiết kế có thể được quan sát theo 2 chiều khác nhau như được thể hiện trong\autoref{fig:fig8_4}.  Chiều quá trình (process dimension) biểu thị sự tiến hóa của mô hình thiết kế trong khi các task được thực hiện như là một phần trong các quá trình của phần mềm. Chiều trừu tượng (abstraction dimension) đại diện cho mức độ chi tiết khi mỗi yếu tố của mô hình phân tích được biến đổi thành một thiết kế tương ứng và cải thiện một cách lặp đi lặp lại. Theo\autoref{fig:fig8_4}, đường nét đứt biểu thị ranh giới giữa mô hình phân tích và thiết kế. Trong một vài trường hợp, việc phân biệt rõ mô hình phân tích và thiết kế là khả thi. Trong vài trường hợp khác, mô hình phân tích dần trộn lẫn với mô hình thiết kế nên đường phân biệt sẽ ít rõ ràng hơn. 
+
+\begin{figure}[!htb]
+	\centering
+	\includegraphics[width=\textwidth]{figure_8_4.png}
+	\caption{Chiều của mô hình thiết kế}
+	\label{fig:fig8_4}
+\end{figure}
 
 
 Các yếu tố của mô hình thiết kế có sử dụng nhiều biểu đồ UML mà cũng được sử dụng trong mô hình phân tích. Điểm khác biệt là các biểu đồ này được cải thiện và bổ sung như là một phần của thiết kế; bổ sung các chi tiết cụ thể về việc thực thi được cung cấp, cùng với cấu trúc kiến trúc và phong cách, các thành phần trú ngụ bên trong kiến trúc, giao diện giữa các thành phần và với thế giới bên ngoài đều được nhấn mạnh. 
@@ -20,7 +27,7 @@ Cấu trúc của dữ liệu vẫn luôn là một phần quan trọng của th
 Thiết kế kiến trúc cho phần mềm tương đương với sơ đồ mặt bằng của một ngôi nhà. Sơ đồ mặt bằng mô tả bố cục tổng thể của các phòng; kích thước, hình dạng và mối quan hệ của chúng với nhau; và các cửa ra vào và cửa sổ cho phép di chuyển vào và ra khỏi phòng. Sơ đồ mặt bằng cho chúng ta một cái nhìn tổng thể về ngôi nhà.Tương tự, các yếu tố thiết kế kiến trúc cho chúng ta cái nhìn tổng thể về phần mềm. 
 
 
-Mô hình kiến trúc [Sha96] được lấy từ ba nguồn: (1) thông tin về miền ứng dụng cho phần mềm sẽ được xây dựng; (2) các yếu tố mô hình được yêu cầu cụ thể như biểu đồ luồng dữ liệu hoặc các lớp phân tích, mối quan hệ và sự hợp tác của chúng cho vấn đề hiện tại; và (3) sự sẵn có của các kiểu kiến trúc và các mẫu. 
+Mô hình kiến trúc \cites{Sha96} được lấy từ ba nguồn: (1) thông tin về miền ứng dụng cho phần mềm sẽ được xây dựng; (2) các yếu tố mô hình được yêu cầu cụ thể như biểu đồ luồng dữ liệu hoặc các lớp phân tích, mối quan hệ và sự hợp tác của chúng cho vấn đề hiện tại; và (3) sự sẵn có của các kiểu kiến trúc và các mẫu. 
 Yếu tố thiết kế kiến trúc thường được mô tả như một tập hợp các hệ thống con được kết nối với nhau, thường được lấy từ các gói phân tích trong mô hình yêu cầu. Mỗi hệ thống con có thể có kiến trúc riêng của nó (ví dụ: giao diện người dùng có thể được cấu trúc theo kiểu kiến trúc có sẵn cho giao diện người dùng). Những kỹ thuật lấy các yếu tố cụ thể của mô hình kiến trúc được trình bày trong chương tiếp theo.  
 
 \subsection{Các yếu tố thiết kế giao diện}
@@ -37,13 +44,20 @@ Việc thiết kế các giao diện bên ngoài đòi hỏi thông tin dứt kh
 
 
 Thiết kế của các giao diện bên trong được liên kết chặt chẽ với thiết kế tầng thành phần.  Thiết kế của các lớp phân tích đại diện cho tất cả các hoạt động và các kế hoạch cần thiết để cho phép giao tiếp và hợp tác giữa các hoạt động trong các lớp khác nhau. Mỗi thông điệp phải được thiết kế để phù hợp với việc truyền thông tin cần thiết và các yêu cầu chức năng cụ thể của hoạt động đã được yêu cầu. Nếu cách tiếp cận cổ điển đầu vào - tiến trình - đầu ra để thiết kế được chọn, giao diện của từng thành phần phần mềm được thiết kế dựa trên các biểu diễn luồng dữ liệu và chức năng được mô tả trong tường thuật xử lý. 
-Trong một số trường hợp, một giao diện được mô hình hóa tương tự với một lớp. Trong UML, một giao diện được định nghĩa theo cách sau [OMG03a]: “Giao diện là chỉ định cho các hoạt động [công khai] có thể nhìn thấy bên ngoài của một lớp, thành phần hoặc phân loại khác (bao gồm cả các hệ thống con) mà không có đặc điểm kỹ thuật của cấu trúc bên trong”. Nói một cách đơn giản hơn, giao diện là một tập hợp các hoạt động mô tả một phần hành vi của một lớp và cung cấp quyền truy cập vào các hoạt động này. 
+Trong một số trường hợp, một giao diện được mô hình hóa tương tự với một lớp. Trong UML, một giao diện được định nghĩa theo cách sau \cites{Gro03}: “Giao diện là chỉ định cho các hoạt động [công khai] có thể nhìn thấy bên ngoài của một lớp, thành phần hoặc phân loại khác (bao gồm cả các hệ thống con) mà không có đặc điểm kỹ thuật của cấu trúc bên trong”. Nói một cách đơn giản hơn, giao diện là một tập hợp các hoạt động mô tả một phần hành vi của một lớp và cung cấp quyền truy cập vào các hoạt động này. 
 
 
 Ví dụ: chức năng bảo mật SafeHome sử dụng bảng điều khiển cho phép chủ nhà kiểm soát các khía cạnh nhất định của chức năng bảo mật. Trong phiên bản nâng cao của hệ thống, các chức năng của bảng điều khiển có thể được thực hiện thông qua một thiết bị không dây hoặc điện thoại di động. 
 
+	\begin{figure}[!htb]
+	\centering
+	\includegraphics[width=\textwidth]{figure_8_5.png}
+	\caption{Mô tả giao diện cho ControlPanel}
+	\label{fig:fig8_5}
+\end{figure}
 
-Lớp ControlPanel (Hình 8.5) cung cấp hành vi liên quan tới bàn phím, do đó, nó phải thực hiện các hoạt động readKeyStroke () và decodeKey (). Nếu các hoạt động này được cung cấp cho các lớp khác (trong trường hợp này là WirelessPDA và MobilePhone), sẽ rất hữu ích khi xác định giao diện như trong hình. Giao diện này, được đặt tên là KeyPad, được hiển thị dưới dạng khuôn mẫu << interface >> hoặc dưới dạng một vòng tròn nhỏ, được gắn nhãn kết nối với lớp bằng một đường kẻ. Giao diện được xác định không có thuộc tính và tập hợp các thao tác cần thiết để đạt được hành vi của bàn phím.
+
+Lớp ControlPanel\autoref{fig:fig8_5} cung cấp hành vi liên quan tới bàn phím, do đó, nó phải thực hiện các hoạt động readKeyStroke () và decodeKey (). Nếu các hoạt động này được cung cấp cho các lớp khác (trong trường hợp này là WirelessPDA và MobilePhone), sẽ rất hữu ích khi xác định giao diện như trong hình. Giao diện này, được đặt tên là KeyPad, được hiển thị dưới dạng khuôn mẫu << interface >> hoặc dưới dạng một vòng tròn nhỏ, được gắn nhãn kết nối với lớp bằng một đường kẻ. Giao diện được xác định không có thuộc tính và tập hợp các thao tác cần thiết để đạt được hành vi của bàn phím.
 \subsection{Thiết kế các yếu tố ở cấp thành phần}
 Sau quá trình thiết kế kiến trúc, ta đã xác định được một kiến trúc hoàn chỉnh các thành phần của phần mềm. Nhưng cấu trúc dữ liệu và chi tiết của từng thành phần không được biểu diễn rõ ràng. Vì vậy, thiết kế cấp thành phần chính là bước xác định cấu trúc dữ liệu, thuật toán, đặc điểm giao diện và cơ chế truyền thông được phân bổ cho từng thành phần.
 
@@ -54,7 +68,14 @@ Bản thiết kế cấp thành phần của phần mềm như là một bản t
 Thiết kế cấp thành phần miêu tả đầy đủ những chi tiết bên trong từng thành phần. Để đạt được điều đó, thiết kế cấp thành phần khai báo những cấu trúc dữ liệu cho tất cả các đối tượng dữ liệu địa phương và thuật toán chi tiết cho tất cả những tiến trình xảy ra ở thành phần và interface cho phép truy cập với tất cả những hoạt động của thành phần.
 
 
-Trong trường hợp phần mềm hướng tới đối tượng, một sơ đồ thành phần UML được biểu diễn ở hình 8.6. Trong hình này là  một thành phần có tên là SensorManagent( Quản lý cảm biến) ( một phần trong các chức năng của SafeHome). Mũi tên nét đứt nối với class có tên là Sensor được kế thừa từ đó.
+\begin{figure}[!htb]
+	\centering
+	\includegraphics[width=\textwidth]{figure_8_6.png}
+	\caption{Sơ đồ thành phần UML}
+	\label{fig:fig8_6}
+\end{figure}
+
+Trong trường hợp phần mềm hướng tới đối tượng, một sơ đồ thành phần UML được biểu diễn ở \autoref{fig:fig8_6}. Trong hình này là  một thành phần có tên là SensorManagent( Quản lý cảm biến) ( một phần trong các chức năng của SafeHome). Mũi tên nét đứt nối với class có tên là Sensor được kế thừa từ đó.
 
 
 Component SensorManagement  có tất cả những hàm liên quan đến class Sensor( cảm biến của SafeHome) bao gồm cả việc giám sát và cấu hình chung. Thiết kế chi tiết của các thành phần sẽ được kế thừa qua các lớp trừu tượng.  Những logic của component có thể được trình bày bằng một sơ đồ UML.

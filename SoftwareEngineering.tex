@@ -1,7 +1,7 @@
 \documentclass[12pt,a4paper,oneside]{article}
 \usepackage[utf8]{vietnam}
-%\usepackage[T5]{fontenc}
-\usepackage{times}
+\usepackage[T5]{fontenc}
+%\usepackage{times}
 \usepackage{amsmath}
 \usepackage{amsfonts}
 \usepackage{amssymb}
@@ -14,8 +14,20 @@
 \usepackage[acronym]{glossaries}
 \usepackage{multicol}
 \usepackage{subfiles}
-\usepackage{setspace}
-\usepackage{float}
+\usepackage{hyperref}
+
+\let\orgautoref\autoref
+\providecommand{\Autoref}[1]
+{
+	\def\figureautorefname{Figure}
+	\orgautoref{#1}
+}
+% \autoref is used inside the sentence to produce Fig., and Eq. for figures, subfigures, and equations
+\renewcommand{\autoref}[1]
+{
+	\def\figureautorefname{hình}
+	\orgautoref{#1}
+}
 
 \addbibresource{./reference.bib}
 \makeindex
@@ -23,8 +35,6 @@
 \loadglsentries{glossary}
 \graphicspath{ {./images/} {./../images}}
 \DeclareGraphicsExtensions{.png}
-\renewcommand{\baselinestretch}{1.0} 
-
 
 \title{Design Concept}
 
