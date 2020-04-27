@@ -2,17 +2,31 @@
 
 \begin{document}
 	\section{Thiết kế trong lĩnh vực lập trình}
-	Thiết kế phần mềm là một phần quan trọng của kỹ nghệ phần mềm và được áp dụng đối với tất cả các mô hình phát triển phần mềm. Các yêu cầu phần mềm ban đầu sẽ được phân tích và tiến hành mô hình hóa, thì thiết kế phần mềm chính là bước cuối cùng trong hoạt động mô hình hóa chuẩn bị cho giai đoạn xây dựng ( sinh mã nguồn và thử nghiệm).
-	\begin{figure}
+	Thiết kế phần mềm là một phần quan trọng của kỹ nghệ phần mềm và được áp dụng đối với tất cả các mô hình phát triển phần mềm. Các yêu cầu phần mềm ban đầu sẽ được phân tích và tiến hành mô hình hóa, thì thiết kế phần mềm chính là bước cuối cùng trong hoạt động mô hình hóa chuẩn bị cho giai đoạn xây dựng ( sinh mã nguồn và kiểm thử).
+
+	
+	\begin{figure}[htbp]
 		\centering
 		\includegraphics[width=\textwidth]{figure_8_1.png}
 		\caption{Chuyển mô hình yêu cầu thành mô hình thiết kế}
-		\label{fig8_1}
+		\label{ref:fig8_1}
 	\end{figure}
 	
-	Mỗi một thành phần của mô hình yêu cầu (Chương 6 và 7) sẽ cung cấp thông tin cần thiết để tạo ra bốn mô hình thiết kế quy định cho một đặc tả thiết kế hoàn chỉnh. Luồng thông tin trong quá trình thiết kế phần mềm được minh họa trong Hình 8.1. Mô hình yêu cầu, được thể hiện qua các thành phần dựa trên kịch bản (scenario-based), dựa trên lớp(class-based), hướng luồng (flow-oriented) và hành vi (behavioral), cung cấp cho công việc thiết kế. Sử dụng ký hiệu thiết kế và phương pháp thiết kế sẽ được thảo luận trong các chương sau, thiết kế được chia thành các nội dung:  thiết kế cấu trúc dữ liệu (data/class), thiết kế kiến trúc (architectural), thiết kế giao diện (interface) và thiết kế thành phần (component).
+	Luồng thông tin trong giai đoạn kĩ thuật này của tiến trình kỹ nghệ phần mềm được minh họa trong hình 8.1.Các yêu cầu phần mềm được biểu thị bởi mô hình luồng dữ liệu (flow-oriented elements), mô hình hành vi (behavioral elements), mô hình lớp (class-based elements), mô hình kịch bản (scenario-based). Bằng việc sử dụng một trong các phương pháp thiết kế, hoạt động thiết kế sẽ tạo ra:  thiết kế dữ liệu/lớp (data/class design), thiết kế kiến trúc (architectural design), thiết kế giao diện (interface design) và thiết kế thành phần (component-level design).
 	
-	Thiết kế cấu trúc dữ liệu: biến đổi các mô hình lớp (Chương 6) thành hiện thực hóa lớp thiết kế và các cấu trúc dữ liệu cần thiết để thực thi phần mềm. Các đối tượng, các mối quan hệ được xác định trong sơ đồ CRC cũng như những nội dung chi tiết được mô tả bởi các thuộc tính lớp cùng với các ký hiệu khác đều cung cấp cơ sở cho việc thiết kế dữ liệu. Một phần của thiết kế lớp có thể xảy ra kết hợp với thiết kế kiến trúc phần mềm. Thiết kế lớp có thể đi vào chi tiết hơn khi mỗi thành phần của phần mềm được thiết kế.
 	
-	Thiết kế kiến trúc: xác định mối quan hệ giữa cấu trúc chính của phần mềm,kiểu kiến trúc(architectural styles) và mẫu thiết kế (design patterns) cái mà được xem là một mô tả hay một sườn (template) mô tả phong cách thiết kế [Sha96]. Đại diện cho một thiết kế kiến trúc framework của hệ thống computer-based- là một thiết kế có nguồn gốc từ mô hình yêu cầu.
+	\begin{description}\itemsep2pt
+		\item[Thiết kế dữ liệu/lớp] chuyển mô hình lĩnh vực thông tin đã được tạo ra trong bước phân tích thành các cấu trúc dữ liệu sẽ cần cho việc thiết kế phần mềm. 
+		\item[Thiết kế kiến trúc] xác định mối quan hệ giữa các thành phần cấu trúc chính của phần mềm.
+		\item[Thiết kế giao diện] mô tả cách giao tiếp của một phần mềm với hệ thống và với người sử dụng. 
+		\item[Thiết kế thành phần] các dịch vụ cung cấp cho các thành phần khác và các giao diện tương tác với chúng phải được thiết kế. 
+	\end{description}
+	
+	
+	Thiết kế, lập trình và kiểm thử chiếm đến 75 phần trăm chi phí kỹ nghệ phần mềm (trừ bảo trì). Chính tại các bước này mà chúng ta quyết định rằng sự thành công của việc cài đặt phần mềm sẽ bị ảnh hưởng, và điều quan trọng là làm dễ dàng cho việc bảo trì phần mềm. Những quyết định này được thực hiện trong thiết kế phần mềm, làm cho nó thành bước thử nghiệm trong giai đoạn phát triển.
+	
+	
+	Tầm quan trọng của thiết kế phần mềm có thể được phát biểu bằng một từ - chất lượng. Thiết kế là nơi chất lượng được bồi dưỡng trong công nghệ phần mềm. Thiết kế cung cấp cho ta cách biểu diễn phần mềm  có thể được xác nhận về chất lượng. Thiết kế là cách duy nhất để chúng ta có thể dịch chính xác các yêu cầu của khách hàng thành một sản phẩm hoặc hệ thống phần mềm hoàn chỉnh. Thiết kế phần mềm đóng vai trò là nền tảng cho tất cả các bước kỹ nghệ phần mềm và bảo trì phần mềm sau đó. Nếu không có thiết kế, ta có nguy cơ sẽ xây dựng nên một hệ thống không ổn định - một hệ thống sẽ thất bại khi có một thay đổi nhỏ; một hệ thống có thể khó mà thử nghiệm được; một hệ thống mà người ta không thể nào xác nhận được chất lượng cho đến khi thực hiện xong tiến trình kiểm thử, khi thời gian còn rất ngắn và đã tốn khá nhiều chi phí.
+
+	
 \end{document}
