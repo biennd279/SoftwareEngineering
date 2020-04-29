@@ -2,16 +2,16 @@
 
 \begin{document}
 	\section{Tiến trình thiết kế}
-	Thiết kế phần mềm là một quá trình lặp đi lặp lại, qua đó các yêu cầu được dịch thành một biểu diễn phần mềm. Về cơ bản, bản thiết kế mô tả một cái nhìn toàn diện về phần mềm. Việc làm mịn tiếp theo sẽ tạo ra một biểu diễn thiết kế rất gần với chương trình hoàn chỉnh mà chúng ta mong muốn.
+	Thiết kế phần mềm\index{thiết kế phần mềm} là một quá trình lặp đi lặp lại, qua đó các yêu cầu được dịch thành một biểu diễn phần mềm. Về cơ bản, bản thiết kế mô tả một cái nhìn toàn diện về phần mềm. Việc làm mịn tiếp theo sẽ tạo ra một biểu diễn thiết kế rất gần với chương trình hoàn chỉnh mà chúng ta mong muốn.
 	
 	\subsection{Tiêu chuẩn và thuộc tính chất lượng phần mềm}
-	Trong toàn bộ tiến trình thiết kế, chất lượng của thiết kế tiến hóa được đánh giá bằng một loạt các thảo luận xét duyệt kỹ thuật chính thức. Để đánh giá chất lượng của một biểu diễn thiết kế, chúng ta phải thiết lập các tiêu chuẩn cho thiết kế tốt. McGlaughlin \cites{McG91} gợi ý 3 đặc điểm đóng vai trò là kim chỉ nam cho việc đánh giá một thiết kế tốt:
+	Trong toàn bộ tiến trình thiết kế, chất lượng của thiết kế tiến hóa được đánh giá bằng một loạt các thảo luận xét duyệt kỹ thuật chính thức. Để đánh giá chất lượng của một biểu diễn thiết kế, chúng ta phải thiết lập các tiêu chuẩn cho thiết kế tốt. McGlaughlin \cite{McG91} gợi ý 3 đặc điểm đóng vai trò là kim chỉ nam cho việc đánh giá một thiết kế tốt
 	\begin{itemize}
 		\item Thiết kế phải thực hiện tất cả các yêu cầu rõ ràng có trong mô hình yêu cầu và nó phải đáp ứng tất cả các yêu cầu ngầm mà khách hàng mong muốn.
 		\item Thiết kế phải là một hướng dẫn dễ đọc, dễ hiểu cho những người lập trình, người kiểm thử và người bảo trì phần mềm.
 		\item Thiết kế nên cung cấp một bức tranh hoàn chỉnh về phần mềm, quản lý dữ liệu và các chức năng.
 	\end{itemize}
-	\textbf{ Tiêu chuẩn chất lượng.} Để đánh giá chất lượng của một biểu diễn thiết kế, bạn và các thành viên khác trong nhóm cần phải thiết lập các tiêu chuẩn cho thiết kế tốt. Trong cuối chương này, chúng ta sẽ cùng nhau tìm hiểu chi tiết về các tiêu chuẩn thiết kế. Hiện tại, hãy xem các hướng dẫn sau:
+	\textbf{Tiêu chuẩn chất lượng.} Để đánh giá chất lượng của một biểu diễn thiết kế, bạn và các thành viên khác trong nhóm cần phải thiết lập các tiêu chuẩn cho thiết kế tốt. Trong cuối chương này, chúng ta sẽ cùng nhau tìm hiểu chi tiết về các tiêu chuẩn thiết kế. Hiện tại, hãy xem các hướng dẫn sau:
 	\begin{enumerate}
 		\item Một thiết kế nên nêu ra cách tổ chức theo cấp bậc để dùng cách kiểm soát thông minh trong số các thành phần phần mềm.
 		\item Một thiết kế nên theo các mô đun; nghĩa là, phần mềm nên được phân hoạch một cách hợp lý thành từng phần thực hiện những chức năng xác định . 
@@ -25,20 +25,21 @@
 	Những đặc trưng trên của một thiết kế tốt không thể có được bởi sự may mắn, mà chính nhờ vào việc áp dụng các nguyên tắc thiết kế cơ bản, phương pháp luận hệ thống và sự xem xét kỹ lưỡng.
 	
 	
-	\textbf{Thuộc tính chất lượng.} Hewlett-Packard \cites{Gra87} đã đưa ra một tập hợp các thuộc tính chất lượng phần mềm được tóm gọn trong thuật ngữ FURPS,là khái niệm viết tắt của: functionality (chức năng), usability (tính khả dụng), reliability (độ tin cậy), performance (hiệu suất), supportability (khả năng hỗ trợ) và. Các thuộc tính chất lượng FURPS đại diện cho một mục tiêu cho tất cả các thiết kế phần mềm:
-	\begin{description}
-		\item[Chức năng] được định giá bằng tập hợp các tính chất và khả năng của chương trình đó, độ khái quát các chức năng được thực hiện và độ an ninh của toàn hệ thống.
-		\item [Tính khả dụng]  được đánh giá bằng việc xét các nhân tố con người, thẩm mỹ, sự hoà hợp và tư liệu cung cấp. 
-		\item[Độ tin cậy] được đánh giá bằng cách đo tần suất và mức độ nghiêm trọng của sự cố, độ chính xác của kết quả đầu ra, thời gian trung bình giữa 2 lần thất bại (MTTF), khả năng phục hồi sau thất bại và khả năng dự đoán trước thất bại của chương trình. 
-		\item[Hiệu suất] được đo bằng cách xem xét tốc độ xử lý, thời gian đáp ứng, mức tiêu thụ tài nguyên, thông lượng và hiệu quả. 
-		\item[Khả năng hỗ trợ] được đánh giá bằng tổ hợp các khả năng: khả năng mở rộng chương trình, khả năng thích ứng, bảo trì được, kiểm thử được, khả năng tương thích, cấu hình được (khả năng tổ chức và kiểm soát các yếu tố của cấu hình phần mềm), dễ dàng cài đặt hệ thống và dễ dàng xử lý các sự cố.
-	\end{description}
+	\textbf{Thuộc tính chất lượng.} Hewlett-Packard \cites{Gra87} đã đưa ra một tập hợp các thuộc tính chất lượng phần mềm được tóm gọn trong thuật ngữ \acrshort{FURPS},là khái niệm viết tắt của: functionality (chức năng), usability (tính khả dụng), reliability (độ tin cậy), performance (hiệu suất), supportability (khả năng hỗ trợ) và. Các thuộc tính chất lượng \acrshort{FURPS} đại diện cho một mục tiêu cho tất cả các thiết kế phần mềm:
+	\begin{itemize}
+		\item \textit{Chức năng} được định giá bằng tập hợp các tính chất và khả năng của chương trình đó, độ khái quát các chức năng được thực hiện và độ an ninh của toàn hệ thống.
+		\item \textit{Tính khả dụng}  được đánh giá bằng việc xét các nhân tố con người, thẩm mỹ, sự hoà hợp và tư liệu cung cấp. 
+		\item \textit{Độ tin cậy} được đánh giá bằng cách đo tần suất và mức độ nghiêm trọng của sự cố, độ chính xác của kết quả đầu ra, thời gian trung bình giữa 2 lần thất bại (\acrshort{MTTF}), khả năng phục hồi sau thất bại và khả năng dự đoán trước thất bại của chương trình. 
+		\item \textit{Hiệu suất} được đo bằng cách xem xét tốc độ xử lý, thời gian đáp ứng, mức tiêu thụ tài nguyên, thông lượng và hiệu quả. 
+		\item \textit{Khả năng hỗ trợ} được đánh giá bằng tổ hợp các khả năng: khả năng mở rộng chương trình, khả năng thích ứng, bảo trì được, kiểm thử được, khả năng tương thích, cấu hình được (khả năng tổ chức và kiểm soát các yếu tố của cấu hình phần mềm), dễ dàng cài đặt hệ thống và dễ dàng xử lý các sự cố.
+	\end{itemize}
 	Không phải mọi thuộc tính chất lượng phần mềm đều được ưu tiên như nhau khi tiến hành thiết kế phần mềm. Một ứng dụng này có thể chú trọng đặc biệt về bảo mật. Một ứng dụng khác có thể đòi hỏi hiệu suất cao với  tốc độ xử lý nhanh. Một ứng dụng kia có thể tập trung vào độ tin cậy. Bất kể ưu tiên là gì, điều quan trọng cần lưu ý là các thuộc tính chất lượng này phải được xác định từ khi bắt đầu, không phải sau khi thiết kế đã  hoàn thành.
 	\subsection{Sự Tiến hóa của thiết kế phần mềm.}
 	\textit{Tiến hóa của thiết kế phần mềm} là một quá trình diễn ra liên tục trong khoảng 6 thập kỷ gần đây. Ở các thiết kế đầu tiên, làm việc tập trung vào các tiêu chuẩn cho việc phát triển các chương trình rời nhau và cải tiến cấu trúc phần mềm theo kiểu top-down. Các khía cạnh của lập trình thủ tục được phát triển thành triết lý là lập trình có cấu trúc(structured programming). Các bản thiết kế tiếp theo đã được đề nghị phương pháp cho việc chuyển từ luồng dữ liệu (data flow) hoặc cấu trúc dữ liệu thành các bản định nghĩa thiết kế. Một thiết kế tiếp cận mới hơn đề xuất hướng tiếp cận hướng đối tượng cho các mẫu thiết kế phái sinh (design derivation). Gần đây, nổi bật trong thiết kế phần mềm là trong kiến trúc phần mềm \cites{Kru06} và các mẫu thiết kế (design pattern) có thể sử dụng trong việc hiện thực(implement) kiến trúc phần mềm và thiết kế các mức trừu tượng thấp hơn. Nhấn mạnh thêm rằng ở các phương pháp aspect-oriented , model-driven development, và test-driven development nhấn mạnh các kỹ thuật hiệu quả hơn trong việc modular-hóa và cấu trúc hóa các thiết kế trong các thiết kế đã được tạo ra. 
 	
 	
 	Một số phương pháp thiết kế được phát triển từ những công trình ở trên đã và đang được sử dụng rộng rãi trong toàn ngành. Như một số phân tích được nhắc đến ở Chương 6 và 7, mỗi phương pháp thiết kế giới thiệu các trực cảm và ký pháp, cũng như cung cấp cái nhìn đơn điệu về đặc trưng của chất lượng. Song vậy, những phương pháp đó có những đặc trưng chung: (1) cơ chế chuyển đổi từ yêu cầu trong mô hình biểu diễn thông tin yêu cầu (trong đặc tả) thành bản thiết kế biểu diễn, (2) các ký pháp cho việc biểu diễn thành phần chức năng và các interface của chúng, (3) trực cảm để việc phân chia và làm mịn, và (4)các hướng dẫn cho việc đánh giá chất lượng bản thiết kế.
+	
 	Bất chấp những phương pháp đang được sử dụng, bạn nên áp dụng một số khái niệm cơ bản cho dữ liệu, kiến trúc, interface và thành phần. Những thành phần đó được xét đến theo những phần dưới đây.
 	
 	\begin{multicols}{2}
