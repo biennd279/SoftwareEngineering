@@ -45,15 +45,15 @@ Thiết kế của các giao diện bên trong được liên kết chặt chẽ
 Trong một số trường hợp, một giao diện được mô hình hóa tương tự với một lớp. Trong UML, một giao diện được định nghĩa theo cách sau \cite{Gro03}: “Giao diện là chỉ định cho các hoạt động [công khai] có thể nhìn thấy bên ngoài của một lớp, thành phần hoặc phân loại khác (bao gồm cả các hệ thống con) mà không có đặc điểm kỹ thuật của cấu trúc bên trong”. Nói một cách đơn giản hơn, giao diện là một tập hợp các hoạt động mô tả một phần hành vi của một lớp và cung cấp quyền truy cập vào các hoạt động này. 
 
 
-Ví dụ: chức năng bảo mật \textit{SafeHome} sử dụng bảng điều khiển cho phép chủ nhà kiểm soát các khía cạnh nhất định của chức năng bảo mật. Trong phiên bản nâng cao của hệ thống, các chức năng của bảng điều khiển có thể được thực hiện thông qua một thiết bị không dây PDA hoặc điện thoại di động.
-
-	\begin{figure}[!htb]
+\begin{figure}[!htb]
 	\centering
 	\includegraphics[width=\textwidth]{figure_8_5.png}
 	\caption{Mô tả giao diện cho ControlPanel}
 	\label{fig:fig8_5}
 \end{figure}
 
+
+Ví dụ: chức năng bảo mật \textit{SafeHome} sử dụng bảng điều khiển cho phép chủ nhà kiểm soát các khía cạnh nhất định của chức năng bảo mật. Trong phiên bản nâng cao của hệ thống, các chức năng của bảng điều khiển có thể được thực hiện thông qua một thiết bị không dây PDA hoặc điện thoại di động.
 
 Lớp \textbf{ControlPanel} \autoref{fig:fig8_5} cung cấp hành vi liên quan tới bàn phím, do đó, nó phải thực hiện các hoạt động \textit{readKeyStroke()} và \textit{decodeKey()}. Nếu các hoạt động này được cung cấp cho các lớp khác (trong trường hợp này là \textbf{WirelessPDA} và \textbf{MobilePhone}), sẽ rất hữu ích khi xác định giao diện như trong hình. Giao diện này, được đặt tên là \textbf{KeyPad}, được hiển thị dưới dạng khuôn mẫu <<interface>> hoặc dưới dạng một vòng tròn nhỏ, được gắn nhãn kết nối với lớp bằng một đường kẻ. Giao diện được xác định không có thuộc tính và tập hợp các thao tác cần thiết để đạt được hành vi của bàn phím.
 \subsection{Thiết kế các yếu tố ở cấp thành phần}
