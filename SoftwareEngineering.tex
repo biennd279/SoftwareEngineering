@@ -28,6 +28,9 @@
 \usepackage{hyperref}
 \usepackage{enumitem}
 \usepackage{float}
+\usepackage[table,xcdraw]{xcolor}
+\usepackage{tabularx}
+
 
 \let\orgautoref\autoref
 \providecommand{\Autoref}[1]
@@ -50,6 +53,7 @@
 \loadglsentries{glossary}
 \graphicspath{ {./images/} {./../images}}
 \DeclareGraphicsExtensions{.png}
+\setlist[description]{leftmargin=\parindent,labelindent=\parindent}
 
 \title{Design Concept}
 %\author{Phạm Thị Dân (\textbf{Nhóm trưởng}) \and Lại Tuấn Anh \and Nguyễn Đức Anh \and Nguyễn Đình Biển \and Phạm Việt Dũng}
@@ -63,16 +67,27 @@
 	\listoffigures
 	
 	\listoftables
-	
+	Tiến trình thiết kế
 	\printglossary[type=\acronymtype, title=Thuật ngữ viết tắt]
 	\clearpage
 	
-	\section*{Lời mở đầu}
-	\textit{Thiết kế phần mềm} \index{thiết kế phần mềm}là quá trình chuyển các đặc tả yêu cầu phần mềm thành một biểu diễn thiết kế của hệ thống phần mềm cần xây dựng. Nguyên tắc thiết kế: các khái niệm phải được hiểu rõ trước khi được áp dụng vào thực tiễn, và chính hoạt động thiết kế cũng phải được thực hành, để tạo ra các biểu diễn khác nhau của phần mềm đóng vai trò như một tài liệu hướng dẫn cho hoạt động xây dựng tiếp theo.
+	\section*{Phân chia công việc}
+	Dưới đây là nội dung và phần công việc đã hoàn thành của các thành viên.
 	
+	\begin{tabular}{|c|c|l|c|}
+		\hline 
+	\end{tabular}
 	
+	\clearpage
 	
-	Thiết kế là mấu chốt để kỹ nghệ phần mềm thành công. Vào đầu những năm 1990,\textit{ Mitch Kapor}, người tạo ra \textit{Lotus} 1-2-3, đã trình bày một “bản tuyên ngôn thiết kế phần mềm” trên tạp chí \textit{Dr.Dobbs Journal}. Ông nói:
+	\section*{Lởi mở đầu}
+	\clearpage
+	
+	\section*{Lời của tác giả}
+	\textit{Thiết kế phần mềm} \index{thiết kế phần mềm} là quá trình chuyển các đặc tả yêu cầu phần mềm thành một biểu diễn thiết kế của hệ thống phần mềm cần xây dựng. Nguyên tắc thiết kế: các khái niệm phải được hiểu rõ trước khi được áp dụng vào thực tiễn, và chính hoạt động thiết kế cũng phải được thực hành, để tạo ra các biểu diễn khác nhau của phần mềm đóng vai trò như một tài liệu hướng dẫn cho hoạt động xây dựng tiếp theo.
+	
+	Thiết kế là mấu chốt để kỹ nghệ phần mềm thành công. Vào đầu những năm 1990, \textit{ Mitch Kapor}, người tạo ra \textit{Lotus} 1-2-3, đã trình bày một “bản tuyên ngôn thiết kế phần mềm” trên tạp chí \textit{Dr.Dobbs Journal}. Ông nói:
+	
 	
 	
 	\begin{quotation}
@@ -80,7 +95,6 @@
 		
 		
 		\textit{Vitruvius}, một nhà phê bình kiến trúc La Mã, đưa ra quan niệm rằng các tòa nhà được thiết kế tốt là những tòa nhà thể hiện được sự cứng cáp (firmness), tiện nghi (commodity) và sự thích thú (delight). Đó cũng là quan niệm tương tự để nói về một phần mềm tốt.\textit{ Firmness}: Một chương trình không được có bất kỳ lỗi chức năng nào. \textit{Commodity}: Một chương trình phải hoàn thành tất cả những mục đích theo dự định. \textit{Delight}: Trải nghiệm sử dụng chương trình nên tạo cảm giác thú vị. 
-		
 	\end{quotation}	
 	
 	Mục tiêu của thiết kế là tạo ra một mô hình hoặc biểu diễn thực thể thể hiện được ba yếu tố nêu trên: \textit{firmness}, \textit{commodity} và \textit{delight}. Tiến trình phát triển mô hình này dựa trên những kinh nghiệm trong việc xây dựng các thực thể tương tự, một tập hợp các nguyên tắc hoặc phương pháp hướng dẫn cách phát triển mô hình đó, một tập các tiêu chí đánh giá chất lượng, và một tiến trình lặp đi lặp lại cho đến khi một bản thiết kế được hoàn thành.
@@ -96,15 +110,13 @@
 	\subfile{./section/Section_3.tex}
 	
 	\subfile{./section/Section_4.tex}
+	\clearpage
 	
 	\subfile{./section/Section_5.tex}
-	
-
 	\clearpage
+	
 	\nocite{*}
 	\printbibliography[heading=bibintoc, title=Tài liệu tham khảo]
-	
-	\clearpage
 	\printindex
 	
 \end{document}
