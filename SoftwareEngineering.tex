@@ -30,7 +30,7 @@
 \usepackage{float}
 \usepackage[table,xcdraw]{xcolor}
 \usepackage{tabularx}
-
+\usepackage{wrapfig}
 
 \let\orgautoref\autoref
 \providecommand{\Autoref}[1]
@@ -61,29 +61,38 @@
 	\subfile{title.tex}
 	\clearpage
 	
+	\section*{Phân chia công việc}
+	Dưới đây là nội dung và phần công việc đã hoàn thành của các thành viên.
+	\begin{table}[H]
+	\centering
+	\begin{tabular}{|c | l | c | p{10em} |l|}
+		\hline STT & Họ và Tên & MSSV & Công việc & Mức độ hoàn thành \\
+		\hline 1 & Phạm Thị Dân & 18020267 & - Dịch từ đầu đến hết phần 8.2.1 \newline - Ghép các phần dịch và kiểm tra lại nội dung & Hoàn thành \\
+		\hline 2 & Nguyễn Đình Biển & 18020210 & - Dịch từ phần 8.2.2 đến hết 8.3.5 \newline- Trình bày lại tiểu luận bằng Latex & Hoàn thành \\
+		\hline 3 & Nguyễn Đức Anh & 18020127 & - Dịch từ phần 8.3.6 đến hết 8.3.12  & Hoàn thành \\
+		\hline 4 & Phạm Việt Dũng & 18020013 & - Dịch từ phần 8.4 đến hết 8.4.3 & Hoàn thành \\
+		\hline 5 & Lại Tuấn Anh & 18020117 & - Dịch từ phần 8.4.3 đến hết \newline- Format hình thức & Hoàn thành  \\
+		\hline
+	\end{tabular}
+	\end{table}
+	
+	\clearpage
+	
 	\tableofcontents 
 	\clearpage
 	
 	\listoffigures
 	
 	\listoftables
-	Tiến trình thiết kế
+
 	\printglossary[type=\acronymtype, title=Thuật ngữ viết tắt]
 	\clearpage
 	
-	\section*{Phân chia công việc}
-	Dưới đây là nội dung và phần công việc đã hoàn thành của các thành viên.
-	
-	\begin{tabular}{|c|c|l|c|}
-		\hline 
-	\end{tabular}
-	
-	\clearpage
-	
-	\section*{Lởi mở đầu}
+	\subfile{Intro.tex}
 	\clearpage
 	
 	\section*{Lời của tác giả}
+	\addcontentsline{toc}{section}{Lời của tác giả}
 	\textit{Thiết kế phần mềm} \index{thiết kế phần mềm} là quá trình chuyển các đặc tả yêu cầu phần mềm thành một biểu diễn thiết kế của hệ thống phần mềm cần xây dựng. Nguyên tắc thiết kế: các khái niệm phải được hiểu rõ trước khi được áp dụng vào thực tiễn, và chính hoạt động thiết kế cũng phải được thực hành, để tạo ra các biểu diễn khác nhau của phần mềm đóng vai trò như một tài liệu hướng dẫn cho hoạt động xây dựng tiếp theo.
 	
 	Thiết kế là mấu chốt để kỹ nghệ phần mềm thành công. Vào đầu những năm 1990, \textit{ Mitch Kapor}, người tạo ra \textit{Lotus} 1-2-3, đã trình bày một “bản tuyên ngôn thiết kế phần mềm” trên tạp chí \textit{Dr.Dobbs Journal}. Ông nói:
