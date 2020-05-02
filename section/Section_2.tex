@@ -11,12 +11,12 @@
 		\item Thiết kế phải là một hướng dẫn dễ đọc, dễ hiểu cho những người lập trình, người kiểm thử và người bảo trì phần mềm.
 		\item Thiết kế nên cung cấp một bức tranh hoàn chỉnh về phần mềm, quản lý dữ liệu và các chức năng.
 	\end{itemize}
-	\textbf{Tiêu chuẩn chất lượng.} Để đánh giá chất lượng của một biểu diễn thiết kế, bạn và các thành viên khác trong nhóm cần phải thiết lập các tiêu chuẩn cho thiết kế tốt. Trong cuối chương này, chúng ta sẽ cùng nhau tìm hiểu chi tiết về các tiêu chuẩn thiết kế. Hiện tại, hãy xem các hướng dẫn sau:
+	\textbf{Tiêu chuẩn chất lượng.}\index{tiêu chuẩn chất lượng} Để đánh giá chất lượng của một biểu diễn thiết kế, bạn và các thành viên khác trong nhóm cần phải thiết lập các tiêu chuẩn cho thiết kế tốt. Trong cuối chương này, chúng ta sẽ cùng nhau tìm hiểu chi tiết về các tiêu chuẩn thiết kế. Hiện tại, hãy xem các hướng dẫn sau:
 	\begin{enumerate}
 		\item Một thiết kế nên nêu ra cách tổ chức theo cấp bậc để dùng cách kiểm soát thông minh trong số các thành phần phần mềm.
 		\item Một thiết kế nên theo các mô đun; nghĩa là, phần mềm nên được phân hoạch một cách hợp lý thành từng phần thực hiện những chức năng xác định . 
 		Một thiết kế nên chứa cách biểu diễn riêng biệt và tách biệt giữa dữ liệu và thủ tục.
-		\item Một thiết kế nên dẫn tới các môđun (như chương trình con hay thủ tục) nêu ra các đặc trưng chức năng đặc biệt. 
+		\item Một thiết kế nên dẫn tới các module (như chương trình con hay thủ tục) nêu ra các đặc trưng chức năng đặc biệt. 
 		\item Một thiết kế nên dẫn tới giao diện làm rút gọn độ phức tạp của việc ghép nối giữa các mô đun và với môi trường bên ngoài. 
 		\item Một thiết kế nên được hướng theo cách dùng một phương pháp lặp lại được điều khiển bởi thông tin thu được trong quá trình phân tích yêu cầu phần mềm. 
 		
@@ -25,7 +25,7 @@
 	Những đặc trưng trên của một thiết kế tốt không thể có được bởi sự may mắn, mà chính nhờ vào việc áp dụng các nguyên tắc thiết kế cơ bản, phương pháp luận hệ thống và sự xem xét kỹ lưỡng.
 	
 	
-	\textbf{Thuộc tính chất lượng.} Hewlett-Packard \cites{Gra87} đã đưa ra một tập hợp các thuộc tính chất lượng phần mềm được tóm gọn trong thuật ngữ \acrshort{FURPS},là khái niệm viết tắt của: functionality (chức năng), usability (tính khả dụng), reliability (độ tin cậy), performance (hiệu suất), supportability (khả năng hỗ trợ) và. Các thuộc tính chất lượng \acrshort{FURPS} đại diện cho một mục tiêu cho tất cả các thiết kế phần mềm:
+	\textbf{Thuộc tính chất lượng.} \index{thuộc tính chất lượng}Hewlett-Packard \cites{Gra87} đã đưa ra một tập hợp các thuộc tính chất lượng phần mềm được tóm gọn trong thuật ngữ \acrshort{FURPS},là khái niệm viết tắt của: functionality (chức năng), usability (tính khả dụng), reliability (độ tin cậy), performance (hiệu suất), supportability (khả năng hỗ trợ) và. Các thuộc tính chất lượng \acrshort{FURPS} đại diện cho một mục tiêu cho tất cả các thiết kế phần mềm:
 	\begin{itemize}
 		\item \textit{Chức năng} được định giá bằng tập hợp các tính chất và khả năng của chương trình đó, độ khái quát các chức năng được thực hiện và độ an ninh của toàn hệ thống.
 		\item \textit{Tính khả dụng}  được đánh giá bằng việc xét các nhân tố con người, thẩm mỹ, sự hoà hợp và tư liệu cung cấp. 
@@ -35,7 +35,7 @@
 	\end{itemize}
 	Không phải mọi thuộc tính chất lượng phần mềm đều được ưu tiên như nhau khi tiến hành thiết kế phần mềm. Một ứng dụng này có thể chú trọng đặc biệt về bảo mật. Một ứng dụng khác có thể đòi hỏi hiệu suất cao với  tốc độ xử lý nhanh. Một ứng dụng kia có thể tập trung vào độ tin cậy. Bất kể ưu tiên là gì, điều quan trọng cần lưu ý là các thuộc tính chất lượng này phải được xác định từ khi bắt đầu, không phải sau khi thiết kế đã  hoàn thành.
 	\subsection{Sự Tiến hóa của thiết kế phần mềm.}
-	\textit{Tiến hóa của thiết kế phần mềm} là một quá trình diễn ra liên tục trong khoảng 6 thập kỷ gần đây. Ở các thiết kế đầu tiên, làm việc tập trung vào các tiêu chuẩn cho việc phát triển các chương trình rời nhau và cải tiến cấu trúc phần mềm theo kiểu top-down. Các khía cạnh của lập trình thủ tục được phát triển thành triết lý là lập trình có cấu trúc(structured programming). Các bản thiết kế tiếp theo đã được đề nghị phương pháp cho việc chuyển từ luồng dữ liệu (data flow) hoặc cấu trúc dữ liệu thành các bản định nghĩa thiết kế. Một thiết kế tiếp cận mới hơn đề xuất hướng tiếp cận hướng đối tượng cho các mẫu thiết kế phái sinh (design derivation). Gần đây, nổi bật trong thiết kế phần mềm là trong kiến trúc phần mềm \cites{Kru06} và các mẫu thiết kế (design pattern) có thể sử dụng trong việc hiện thực(implement) kiến trúc phần mềm và thiết kế các mức trừu tượng thấp hơn. Nhấn mạnh thêm rằng ở các phương pháp aspect-oriented , model-driven development, và test-driven development nhấn mạnh các kỹ thuật hiệu quả hơn trong việc modular-hóa và cấu trúc hóa các thiết kế trong các thiết kế đã được tạo ra. 
+	\textit{Tiến hóa của thiết kế phần mềm} là một quá trình diễn ra liên tục trong khoảng 6 thập kỷ gần đây. Ở các thiết kế đầu tiên, làm việc tập trung vào các tiêu chuẩn cho việc phát triển các chương trình rời nhau và cải tiến cấu trúc phần mềm theo kiểu top-down. Các khía cạnh của lập trình thủ tục được phát triển thành triết lý là lập trình có cấu trúc. Các bản thiết kế tiếp theo đã được đề nghị phương pháp cho việc chuyển từ luồng dữ liệu (data flow) hoặc cấu trúc dữ liệu thành các bản định nghĩa thiết kế. Một thiết kế tiếp cận mới hơn đề xuất hướng tiếp cận hướng đối tượng cho các mẫu thiết kế phái sinh (design derivation). Gần đây, nổi bật trong thiết kế phần mềm là trong kiến trúc phần mềm \cites{Kru06} và các mẫu thiết kế (design pattern) có thể sử dụng trong việc hiện thực(implement) kiến trúc phần mềm và thiết kế các mức trừu tượng thấp hơn. Nhấn mạnh thêm rằng ở các phương pháp aspect-oriented , model-driven development, và test-driven development nhấn mạnh các kỹ thuật hiệu quả hơn trong việc module hóa và cấu trúc hóa các thiết kế trong các thiết kế đã được tạo ra. 
 	
 	
 	Một số phương pháp thiết kế được phát triển từ những công trình ở trên đã và đang được sử dụng rộng rãi trong toàn ngành. Như một số phân tích được nhắc đến ở Chương 6 và 7, mỗi phương pháp thiết kế giới thiệu các trực cảm và ký pháp, cũng như cung cấp cái nhìn đơn điệu về đặc trưng của chất lượng. Song vậy, những phương pháp đó có những đặc trưng chung: (1) cơ chế chuyển đổi từ yêu cầu trong mô hình biểu diễn thông tin yêu cầu (trong đặc tả) thành bản thiết kế biểu diễn, (2) các ký pháp cho việc biểu diễn thành phần chức năng và các interface của chúng, (3) trực cảm để việc phân chia và làm mịn, và (4)các hướng dẫn cho việc đánh giá chất lượng bản thiết kế.
@@ -46,7 +46,7 @@
 		\setlist{nolistsep}
 		\begin{enumerate}
 			\setlength\itemsep{0em}
-			\item Khảo sát thông tin miền mô hình(domain model), và thiết kế cấu trúc dữ liệu phù hợp cho đối tượng và thuộc tính của chúng. 
+			\item Khảo sát thông tin miền mô hình (domain model), và thiết kế cấu trúc dữ liệu phù hợp cho đối tượng và thuộc tính của chúng. 
 			
 			\item Sử dụng mô hình phân tích, lựa chọn kiểu kiến trúc phù hợp nhất với phần mềm.
 			
@@ -57,14 +57,13 @@
 				\item Phân bố các lớp hoặc hàm đã được phân tích cho các hệ con.
 			\end{itemize}
 			
-			\item Tạo ra một tập các thiết kế cho lớp hoặc component: Chuyển các miêu tả của lớp đã phân tích tới các lớp thiết kế.
+			\item Tạo ra một tập các thiết kế cho lớp hoặc thành phần: Chuyển các miêu tả của lớp đã phân tích tới các lớp thiết kế.
 			\begin{itemize}
 				\setlength\itemsep{0em}
 				\item So sánh từng lớp thiết kế với tiêu chuẩn: cân nhắc các vấn đề liên quan đến  kế thừa.
 				
-				\item Định nghĩa các phương thức và tin nhắn liên kết với mỗi class.
-				
-				\item Đánh giá và sử dụng design pattern cho các thiết kế lớp hoặc hệ con.	
+				\item Định nghĩa các phương thức và tin nhắn liên kết với mỗi lớp.
+				\item Đánh giá và sử dụng mẫu thiết kế cho các thiết kế lớp hoặc hệ con.	
 			\end{itemize}
 			
 			\item Thiết kế tất cả các interface cần thiết cho các hệ thống hoặc thiết bị ngoài.
@@ -85,14 +84,14 @@
 			
 			
 			
-			\item Kiểm soát thiết mức component.
+			\item Kiểm soát thiết mức thành phần.
 			\begin{itemize}
 				\setlength\itemsep{0em}
 				\item Xác định tất cả các thuật toán liên quan đến các mức trừu tượng mức thấp.
 				
-				\item Xác định lại interface cho mỗi component.
+				\item Xác định lại interface cho mỗi thành phần.
 				
-				\item Kiểm tra mỗi component và hiệu chỉnh lại các lỗi chưa xác định.
+				\item Kiểm tra mỗi thành phần và hiệu chỉnh lại các lỗi chưa xác định.
 			\end{itemize}
 			
 			\item Triển khai các mô hình phát triển.

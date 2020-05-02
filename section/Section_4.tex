@@ -44,6 +44,8 @@ Thiết kế của các giao diện bên trong được liên kết chặt chẽ
 
 Trong một số trường hợp, một giao diện được mô hình hóa tương tự với một lớp. Trong UML, một giao diện được định nghĩa theo cách sau \cite{Gro03}: “Giao diện là chỉ định cho các hoạt động [công khai] có thể nhìn thấy bên ngoài của một lớp, thành phần hoặc phân loại khác (bao gồm cả các hệ thống con) mà không có đặc điểm kỹ thuật của cấu trúc bên trong”. Nói một cách đơn giản hơn, giao diện là một tập hợp các hoạt động mô tả một phần hành vi của một lớp và cung cấp quyền truy cập vào các hoạt động này. 
 
+Ví dụ: chức năng bảo mật \textit{SafeHome} sử dụng bảng điều khiển cho phép chủ nhà kiểm soát các khía cạnh nhất định của chức năng bảo mật. Trong phiên bản nâng cao của hệ thống, các chức năng của bảng điều khiển có thể được thực hiện thông qua một thiết bị không dây PDA hoặc điện thoại di động.
+
 
 \begin{figure}[!htb]
 	\centering
@@ -51,9 +53,6 @@ Trong một số trường hợp, một giao diện được mô hình hóa tư�
 	\caption{Mô tả giao diện cho ControlPanel}
 	\label{fig:fig8_5}
 \end{figure}
-
-
-Ví dụ: chức năng bảo mật \textit{SafeHome} sử dụng bảng điều khiển cho phép chủ nhà kiểm soát các khía cạnh nhất định của chức năng bảo mật. Trong phiên bản nâng cao của hệ thống, các chức năng của bảng điều khiển có thể được thực hiện thông qua một thiết bị không dây PDA hoặc điện thoại di động.
 
 Lớp \textbf{ControlPanel} \autoref{fig:fig8_5} cung cấp hành vi liên quan tới bàn phím, do đó, nó phải thực hiện các hoạt động \textit{readKeyStroke()} và \textit{decodeKey()}. Nếu các hoạt động này được cung cấp cho các lớp khác (trong trường hợp này là \textbf{WirelessPDA} và \textbf{MobilePhone}), sẽ rất hữu ích khi xác định giao diện như trong hình. Giao diện này, được đặt tên là \textbf{KeyPad}, được hiển thị dưới dạng khuôn mẫu <<interface>> hoặc dưới dạng một vòng tròn nhỏ, được gắn nhãn kết nối với lớp bằng một đường kẻ. Giao diện được xác định không có thuộc tính và tập hợp các thao tác cần thiết để đạt được hành vi của bàn phím.
 \subsection{Thiết kế các yếu tố ở cấp thành phần}
@@ -70,7 +69,7 @@ Thiết kế cấp thành phần miêu tả đầy đủ những chi tiết bên
 	\label{fig:fig8_6}
 \end{figure}
 
-Trong trường hợp phần mềm hướng tới đối tượng, một sơ đồ thành phần UML được biểu diễn \autoref{fig:fig8_5} Trong hình này là  một thành phần có tên là \textbf{SensorManagement}( Quản lý cảm biến) ( một phần trong các chức năng của SafeHome). Mũi tên nét đứt nối với class có tên là \textbf{Sensor} được kế thừa từ đó.
+Trong trường hợp phần mềm hướng tới đối tượng, một sơ đồ thành phần UML được biểu diễn \autoref{fig:fig8_6} Trong hình này là  một thành phần có tên là \textbf{SensorManagement}( Quản lý cảm biến) ( một phần trong các chức năng của SafeHome). Mũi tên nét đứt nối với class có tên là \textbf{Sensor} được kế thừa từ đó.
 
 \textbf{Thành phần SensorManagement} có tất cả những hàm liên quan đến class \textbf{Sensor}( cảm biến của \textit{SafeHome}) bao gồm cả việc giám sát và cấu hình chung. Thiết kế chi tiết của các thành phần sẽ được kế thừa qua các lớp trừu tượng.  Những logic của component có thể được trình bày bằng một sơ đồ UML.
 
@@ -79,15 +78,15 @@ Luồng điều khiển của thành phần có thể được thể hiện bằ
 
 
 \subsection{Thiết kế sơ đồ triển khai}
+
 Sơ đồ triển khai các thành phần biểu thị cách mà các chức năng và các hệ thống con được phân bổ trong môi trường mà phần mềm đang chạy. Ví dụ, các thành phần của \textit{SafeHome} được cài đặt hoạt động trong 3 môi trường: -một PC tại nhà; - bảng điều khiển \textit{SafeHome}, và một server đặt tại CPI( cung cấp khả năng truy cập hệ thống qua internet).
 
-\begin{figure}[!htb]
+\begin{figure}[htb!]
 	\centering
 	\includegraphics[width=\textwidth]{figure_8_7.png}
 	\caption{Sơ đồ triển khai UML}
 	\label{fig:fig8_7}
 \end{figure}
-
 
  Trong\autoref{fig:fig8_7} là ba môi trường điện toán được biểu thị ( thực chất sẽ nhiều hơn nếu tính đến cảm biến, camera,vv). Mỗi chức năng được đặt trong một môi trường chỉ định. Ví dụ, máy tính cá nhân sẽ bao gồm các chương trình con như security( bảo mật), giám sát, quản lý nhà, và tính năng liên lạc. Ngoài ra,  còn có chương trình quản lý các truy cập từ nguồn bên ngoài. Mỗi một chương trình con/ hệ thống con ấy sẽ được xây dựng dựa theo thành phần mà nó thực hiện.
  
